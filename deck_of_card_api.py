@@ -34,6 +34,19 @@ else:
         else:
             player2_cards.append(draw_cards_content["cards"][i])
 
+    
+    # Define a function to determine if a player has BlackJack
+    def is_blackjack(hand):
+        value = 0
+        for card in hand:
+            if card["value"] in ["10", "JACK", "QUEEN", "KING"]:
+                value += 10
+            elif card["value"] == "ACE":
+                value += 11
+            else:
+                continue
+        return value
+
     # Define a function to calculate a hand's value
     # that is used to check whether either player has blackjack (total hand value of 21)
     def hand_value(hand):
@@ -48,10 +61,9 @@ else:
         return value
 
     # 6 and 7. Check whether either player has blackjack and write out if either has
-    if hand_value(player1_cards) == 21:
+    if is_blackjack(player1_cards) == 21:
         print('Player1 has BlackJack!')
     print('Player1 cards: ', [card["code"] for card in player1_cards], "Hand value: ", hand_value(player1_cards))
-    if hand_value(player2_cards) == 21:
+    if is_blackjack(player2_cards) == 21:
         print('Player2 has BlackJack!')
     print('Player2 cards: ', [card["code"] for card in player2_cards], "Hand value: ", hand_value(player2_cards))
-
