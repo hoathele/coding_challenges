@@ -6,6 +6,7 @@ import time
 import random
 
 move_message = (By.ID, "message")
+
 # Navigate to the website
 driver = webdriver.Chrome()  # Insert your chromedriver path
 driver.get("https://www.gamesforthebrain.com/game/checkers/")
