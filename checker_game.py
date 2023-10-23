@@ -19,7 +19,7 @@ else:
     exit()
 
 
-# Find all spaces with orange pieces
+# Find all spaces with orange pieces in them
 def find_orange_spaces():
     orange_side_board_space_list = []
     orange_space_list = []
